@@ -30,4 +30,7 @@ const Component = () => (
 
 It supports all the options mentioned in [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw).
 
-A detailed example of how to use this componenet is in the [example folder of this repo](https://github.com/elangobharathi/react-leaflet-freedraw/tree/master/example)
+A detailed example of how to use this componenet is in the [example folder of this repo](https://github.com/elangobharathi/react-leaflet-freedraw/tree/master/example). To run the example,
+
+1. Clone this repo
+2. Run `npm run example`
