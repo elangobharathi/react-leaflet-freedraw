@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _leafletFreedraw = require('leaflet-freedraw');
@@ -22,17 +24,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _leaflet = require('leaflet');
-
-var _leaflet2 = _interopRequireDefault(_leaflet);
-
 var _leafletFreedraw2 = _interopRequireDefault(_leafletFreedraw);
 
 var _reactLeaflet = require('react-leaflet');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -52,7 +48,7 @@ var Freedraw = function (_MapLayer) {
   _createClass(Freedraw, [{
     key: 'createLeafletElement',
     value: function createLeafletElement(props) {
-      return new (Function.prototype.bind.apply(_leafletFreedraw2.default, [null].concat(_toConsumableArray(props))))();
+      return new _leafletFreedraw2.default(_extends({}, props));
     }
   }, {
     key: 'updateLeafletElement',

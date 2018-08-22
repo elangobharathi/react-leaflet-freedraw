@@ -4,7 +4,7 @@ import { MapLayer, withLeaflet } from 'react-leaflet';
 
 class Freedraw extends MapLayer {
   createLeafletElement(props) {
-    return new LeafletFreedraw(...props);
+    return new LeafletFreedraw({ ...props });
   }
 
   updateLeafletElement(fromProps, toProps) {
