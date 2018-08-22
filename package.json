@@ -1,8 +1,8 @@
 {
   "name": "react-leaflet-freedraw",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Component for freedraw",
-  "main": "index.js",
+  "main": "Freedraw.js",
   "scripts": {
     "start": "babel Freedraw.jsx > Freedraw.js",
     "example": "webpack-serve --config ./example/webpack.config.js"
