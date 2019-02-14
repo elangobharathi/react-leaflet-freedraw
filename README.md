@@ -6,7 +6,7 @@ React component built on top of [react-leaflet](https://github.com/PaulLeCam/rea
 
 `npm install react-leaflet-freedraw`
 
-Make sure that you have the following peer dependencies are installed.
+Make sure that you have the following peer dependencies installed.
 
 `npm install leaflet react-leaflet leaflet-freedraw ramda react react-dom`
 
