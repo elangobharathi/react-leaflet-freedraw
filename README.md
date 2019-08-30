@@ -37,4 +37,5 @@ It supports all the options mentioned in [Leaflet.FreeDraw](https://github.com/W
 A detailed example of how to use this componenet is in the [example folder of this repo](https://github.com/elangobharathi/react-leaflet-freedraw/tree/master/example). To run the example,
 
 1. Clone this repo
-2. Run `npm run example`
+2. Run `npm i`
+3. Run `npm run example`
