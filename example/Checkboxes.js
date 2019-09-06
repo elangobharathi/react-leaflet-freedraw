@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const CheckboxContainer = props => (
   <React.Fragment>
@@ -10,7 +10,7 @@ const CheckboxContainer = props => (
             name={item.id}
             checked={item.isChecked}
             onChange={props.onChange}
-          />{' '}
+          />
           {item.label}
         </label>
       </div>
@@ -21,10 +21,11 @@ const CheckboxContainer = props => (
 export default CheckboxContainer;
 
 CheckboxContainer.propTypes = {
-  checkboxes: PropTypes.arrayOf(PropTypes.shape).isRequired
+  checkboxes: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
-const Checkbox = ({ type = 'checkbox', name, checked = false, onChange }) => (
+const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => (
   <input type={type} name={name} checked={checked} onChange={onChange} />
 );
 
