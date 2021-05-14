@@ -9,6 +9,9 @@
 # production
 /build
 
+.parcel-cache/
+dist/
+
 # misc
 .DS_Store
 .env.local

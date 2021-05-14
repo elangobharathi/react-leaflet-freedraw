@@ -1,32 +1,22 @@
-import React from 'react';
 import LeafletFreedraw from 'leaflet-freedraw';
-import { MapLayer, withLeaflet } from 'react-leaflet';
+import { createLayerComponent } from '@react-leaflet/core';
 
-class Freedraw extends MapLayer {
-  createLeafletElement(props) {
-    return new LeafletFreedraw({ ...props });
-  }
+function createLeafletElement(props, context) {
+  const instance = new LeafletFreedraw({ ...props });
+  return { instance, context: { ...context, overlayContainer: instance } };
+}
 
-  updateLeafletElement(fromProps, toProps) {
-    this.leafletElement.mode(toProps.mode);
-  }
-
-  componentDidMount() {
-    const { map } = this.props.leaflet;
-    map.addLayer(this.leafletElement);
-    this.attachEvents();
-  }
-
-  attachEvents() {
-    this.leafletElement.on('markers', this.props.onMarkers);
-    this.leafletElement.on('mode', this.props.onModeChange);
-  }
-
-  render() {
-    return null;
+function updateLeafletElement(instance, props, prevProps) {
+  if (props.mode !== prevProps.mode) {
+    instance.mode(props.mode);
   }
 }
 
-export default withLeaflet(Freedraw);
+const Freedraw = createLayerComponent(
+  createLeafletElement,
+  updateLeafletElement
+);
+
+export default Freedraw;
 
 export * from 'leaflet-freedraw';
