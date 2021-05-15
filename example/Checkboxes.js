@@ -13,7 +13,7 @@ const CheckboxContainer = (props) => (
             name={item.id}
             checked={item.isChecked}
             onChange={props.onChange}
-          />{' '}
+          />
           {item.label}
         </label>
       </div>
