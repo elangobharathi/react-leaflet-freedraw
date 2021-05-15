@@ -8,28 +8,41 @@ React component built on top of [react-leaflet](https://github.com/PaulLeCam/rea
 
 Make sure that you have the following peer dependencies installed.
 
-`npm install leaflet react-leaflet leaflet-freedraw ramda react react-dom`
+`npm install leaflet react-leaflet @react-leaflet/core leaflet-freedraw ramda react react-dom`
 
 ## Getting started
 
 Please make sure that you go through [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw) readme before integrating this component.
 
-You need to wrap this component into Map component and pass the options as shown below.
+You need to wrap this component into MapContainer component and pass the options as shown below.
 
 ```javascript
-import { Map } from 'react-leaflet';
+import React, { useRef } from 'react';
+import { MapContainer } from 'react-leaflet';
 import Freedraw, { ALL } from 'react-leaflet-freedraw';
 
-const Component = () => (
-  <Map>
-    <Freedraw
-      mode={ALL}
-      onMarkers={this.handleOnMarkers}
-      onModeChange={this.handleModeChange}
-      ref={this.freedrawRef}
-    />
-  </Map>
-);
+const Component = () => {
+  const freedrawRef = useRef(null);
+
+  return (
+    <MapContainer>
+      <Freedraw
+        mode={ALL}
+        eventHandlers={{
+          markers: (event) =>
+            console.log(
+              'markers drawn - latLngs',
+              event.latLngs,
+              'Polygons:',
+              freedrawRef.current.size()
+            ),
+          mode: (event) => console.log('mode changed', event),
+        }}
+        ref={freedrawRef}
+      />
+    </MapContainer>
+  );
+};
 ```
 
 It supports all the options mentioned in [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw).

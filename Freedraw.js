@@ -1,17 +1,19 @@
-'use strict';
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var _exportNames = {};
+exports["default"] = void 0;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _leafletFreedraw = require('leaflet-freedraw');
+var _leafletFreedraw = _interopRequireWildcard(require("leaflet-freedraw"));
 
 Object.keys(_leafletFreedraw).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _leafletFreedraw[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -20,64 +22,35 @@ Object.keys(_leafletFreedraw).forEach(function (key) {
   });
 });
 
-var _react = require('react');
+var _core = require("@react-leaflet/core");
 
-var _react2 = _interopRequireDefault(_react);
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-var _leafletFreedraw2 = _interopRequireDefault(_leafletFreedraw);
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var _reactLeaflet = require('react-leaflet');
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function createLeafletElement(props, context) {
+  var instance = new _leafletFreedraw["default"](_objectSpread({}, props));
+  return {
+    instance: instance,
+    context: _objectSpread(_objectSpread({}, context), {}, {
+      overlayContainer: instance
+    })
+  };
+}
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Freedraw = function (_MapLayer) {
-  _inherits(Freedraw, _MapLayer);
-
-  function Freedraw() {
-    _classCallCheck(this, Freedraw);
-
-    return _possibleConstructorReturn(this, (Freedraw.__proto__ || Object.getPrototypeOf(Freedraw)).apply(this, arguments));
+function updateLeafletElement(instance, props, prevProps) {
+  if (props.mode !== prevProps.mode) {
+    instance.mode(props.mode);
   }
+}
 
-  _createClass(Freedraw, [{
-    key: 'createLeafletElement',
-    value: function createLeafletElement(props) {
-      return new _leafletFreedraw2.default(_extends({}, props));
-    }
-  }, {
-    key: 'updateLeafletElement',
-    value: function updateLeafletElement(fromProps, toProps) {
-      this.leafletElement.mode(toProps.mode);
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var map = this.props.leaflet.map;
-
-      map.addLayer(this.leafletElement);
-      this.attachEvents();
-    }
-  }, {
-    key: 'attachEvents',
-    value: function attachEvents() {
-      this.leafletElement.on('markers', this.props.onMarkers);
-      this.leafletElement.on('mode', this.props.onModeChange);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return null;
-    }
-  }]);
-
-  return Freedraw;
-}(_reactLeaflet.MapLayer);
-
-exports.default = (0, _reactLeaflet.withLeaflet)(Freedraw);
+var Freedraw = (0, _core.createLayerComponent)(createLeafletElement, updateLeafletElement);
+var _default = Freedraw;
+exports["default"] = _default;
 
