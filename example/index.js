@@ -75,7 +75,7 @@ function Example() {
       markers: handleMarkersDraw,
       mode: handleModeChange,
     }),
-    []
+    [handleMarkersDraw, handleModeChange]
   );
 
   const handleEscapeKey = useCallback((event) => {

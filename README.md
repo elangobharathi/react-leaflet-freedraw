@@ -1,14 +1,22 @@
 # react-leaflet-freedraw
 
-React component built on top of [react-leaflet](https://github.com/PaulLeCam/react-leaflet) that integrates [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw) library.
+React component built on top of [react-leaflet](https://github.com/PaulLeCam/react-leaflet) that integrates [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw) library. Please checkout [codesandbox EXAMPLE](https://codesandbox.io/s/react-leaflet-freedraw-example-1fy3l?file=/src/App.js) using this package with some primary use cases.
 
 ## Install
 
-`npm install react-leaflet-freedraw`
+`npm install react-leaflet-freedraw --save`
+
+or
+
+`yarn add react-leaflet-freedraw`
 
 Make sure that you have the following peer dependencies installed.
 
-`npm install leaflet react-leaflet @react-leaflet/core leaflet-freedraw ramda react react-dom`
+`npm install leaflet react-leaflet @react-leaflet/core leaflet-freedraw ramda react react-dom --save`
+
+or
+
+`yarn add leaflet react-leaflet @react-leaflet/core leaflet-freedraw ramda react react-dom`
 
 ## Getting started
 
