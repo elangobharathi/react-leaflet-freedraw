@@ -5,7 +5,7 @@ const Checkbox = ({ type = 'checkbox', name, checked = false, onChange }) => (
 );
 
 const CheckboxContainer = (props) => (
-  <React.Fragment>
+  <>
     {props.checkboxes.map((item) => (
       <div key={item.id}>
         <label>
@@ -18,7 +18,7 @@ const CheckboxContainer = (props) => (
         </label>
       </div>
     ))}
-  </React.Fragment>
+  </>
 );
 
 export default CheckboxContainer;
