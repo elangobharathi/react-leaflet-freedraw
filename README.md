@@ -1,6 +1,6 @@
 # react-leaflet-freedraw
 
-React component built on top of [react-leaflet v3](https://github.com/PaulLeCam/react-leaflet) that integrates [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw) library. 
+Plugin for [react-leaflet v3](https://github.com/PaulLeCam/react-leaflet) to integrate [Leaflet.FreeDraw](https://github.com/Wildhoney/Leaflet.FreeDraw). 
 
 Please checkout [codesandbox EXAMPLE](https://codesandbox.io/s/react-leaflet-freedraw-example-1fy3l?file=/src/App.js) using this package with some primary use cases.
 
